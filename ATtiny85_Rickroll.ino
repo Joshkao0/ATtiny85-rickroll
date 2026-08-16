@@ -1,40 +1,22 @@
-#include "DigiKeyboard.h"
+#include "DigiKeyboardDe.h"
 
 void setup() {
-  DigiKeyboard.sendKeyStroke(0);
-  DigiKeyboard.delay(1000);
+  DigiKeyboardDe.sendKeyStroke(0);
+  DigiKeyboardDe.delay(1000);
 
   // Win + R
-  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
-  DigiKeyboard.delay(500);
+  DigiKeyboardDe.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboardDe.delay(500);
 
-  // https
-  DigiKeyboard.print("https");
+  // YouTube öffnen
+  DigiKeyboardDe.print("cmd.exe /c start https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+  DigiKeyboardDe.sendKeyStroke(KEY_ENTER);
 
-  // :  = Shift + .
-  DigiKeyboard.sendKeyStroke(55, MOD_SHIFT_LEFT);
+  // Browser laden lassen
+  DigiKeyboardDe.delay(4000);
 
-  // // = Shift + 7
-  DigiKeyboard.sendKeyStroke(36, MOD_SHIFT_LEFT);
-  DigiKeyboard.sendKeyStroke(36, MOD_SHIFT_LEFT);
-
-  // "youtu.be"
-  // Auf deutschem Layout muss der US-Y-Key als Z gesendet werden,
-  // damit Windows daraus Y macht.
-  DigiKeyboard.print("zoutu.be");
-
-  // /
-  DigiKeyboard.sendKeyStroke(36, MOD_SHIFT_LEFT);
-
-  // Video-ID
-  DigiKeyboard.print("dQw4w9WgXcQ");
-
-  DigiKeyboard.delay(500);
-
-  // Enter
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-
-  DigiKeyboard.delay(5000);
+  // F11 = Vollbild
+  DigiKeyboardDe.sendKeyStroke(KEY_F11);
 }
 
 void loop() {
